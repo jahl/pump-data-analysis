@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "jsxFactory": "jsxElem.createElement",
+    "jsxFragmentFactory": "jsxElem.Fragment",
+    "jsx": "preserve"
+  }
+}
