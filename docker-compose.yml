@@ -17,6 +17,17 @@ services:
       - 3000:3000
     environment:
       PORT: 3000
+    depends_on:
+      - bigtable
+
+  bigtable:
+    build:
+      context: .
+      dockerfile: Dockerfile.bigtable
+    env_file: .env
+    ports:
+      - '8086:8086' # Bigtable
+    command: gcloud beta emulators bigtable start --host-port=0.0.0.0:8086
 
 volumes:
   bundler_gems:
